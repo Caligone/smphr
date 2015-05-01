@@ -16,6 +16,4 @@ nconf.overrides({
 
 nconf.set('db:name', nconf.get('db:name') + '-' + nconf.get('env'));
 
-console.log(nconf.get('db:name'));
-
 module.exports = nconf;

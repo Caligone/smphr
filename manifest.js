@@ -15,13 +15,17 @@ module.exports = {
         './api/lib/database': config.get('db'),
         './api/BaseBrick': {},
         './api/UserBrick': {},
+        './api/TargetBrick': {},
+        'hapi-swagger': {
+            apiVersion: config.get('apiVersion')
+        },
         'good': {
             reporters: [{
                 reporter: require('good-console'),
                 logRequestHeaders: true,
                 logRequestPayload: true,
                 logResponsePayload: true,
-                args:[{ log: '*', response: '*' }]
+                events: { log: '*', response: '*' }
             }]
         },
         'hapi-mailer': {

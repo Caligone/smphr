@@ -60,7 +60,7 @@ module.exports = [
                     };
 
                     // Suppression des valeurs sensibles
-                    var cleanedUser = _.pick(user, ['email', 'valid', 'created_at']);
+                    var cleanedUser = _.pick(user, ['_id', 'email', 'valid', 'created_at']);
 
                     var Mailer = request.server.plugins.mailer;
                     Mailer.sendMail(data, function (err, info) {
