@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>smphr</title>
+</head>
+<body>
+
+<div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+
+<script src="https://code.jquery.com/jquery-1.9.1.js"></script>
+<script src="http://code.highcharts.com/highcharts.js"></script>
+<script src="http://code.highcharts.com/modules/exporting.js"></script>
+<script src="http://underscorejs.org/underscore-min.js"></script>
+<script>
+    $(function () {
+        var id_target = window.location.pathname.replace('/demo/', '');
+
+        // Get the CSV and create the chart
+        $.getJSON('http://localhost:3000/logs/' + id_target, function (json) {
+            var series = [];
+            series[0] = {};
+            series[0].name = 'Reponse time';
+            series[0].data = _.map(json, function (l) {
+                var v = _.pick(l, ['created_at', 'responseTime']);
+                v.created_at = Date.parse(v.created_at);
+                return _.toArray(v);
+            });
+            series[1] = {};
+            series[1].name = 'Status code';
+            series[1].data = _.map(json, function (l) {
+                var v = _.pick(l, ['created_at', 'statusCode']);
+                v.created_at = Date.parse(v.created_at);
+                return _.toArray(v);
+            });
+            $('#container').highcharts({
+                title: {
+                    text: 'Data from http://caligone.fr'
+                },
+                xAxis: {
+                    type: 'datetime',
+                    dateTimeLabelFormats: {
+                        month: '%e. %b',
+                        year: '%b'
+                    },
+                    title: {
+                        text: 'Date'
+                    }
+                },
+                yAxis: [{ // left y axis
+                    title: {
+                        text: null
+                    },
+                    labels: {
+                        align: 'left',
+                        x: 3,
+                        y: 16,
+                        format: '{value:.,0f}'
+                    },
+                    showFirstLabel: false
+                }],
+                legend: {
+                    align: 'left',
+                    verticalAlign: 'top',
+                    y: 20,
+                    floating: true,
+                    borderWidth: 0
+                },
+                tooltip: {
+                    shared: true,
+                    crosshairs: true
+                },
+                series: series
+            });
+        });
+    });
+</script>
+</body>
+</html>

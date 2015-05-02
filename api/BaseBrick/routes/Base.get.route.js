@@ -45,5 +45,12 @@ module.exports = [
                 path: './public/fonts'
             }
         }
+    },
+    {
+        method: 'GET',
+        path: '/demo/{param*}',
+        handler: {
+            file: './public/demo.html'
+        }
     }
 ];
