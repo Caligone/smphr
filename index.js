@@ -21,7 +21,7 @@ var Composer = Glue.compose(Manifest, composeOptions, function (err, server) {
                 setInterval(function() {
                     var currentTarget = target;
                     RequestTool({
-                        uri: server.settings.app.url + '/logs/' + target._id,
+                        uri: server.settings.app.get('url') + '/logs/' + target._id,
                         method: 'POST'
                     }, function (err, response) {
                         server.log(currentTarget.url + " checked !", err);
