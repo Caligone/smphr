@@ -1,2 +1,5 @@
 .idea
 config.json
+node_modules
+bower_components
+public/vendors

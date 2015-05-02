@@ -1,0 +1,31 @@
+{
+  "name": "smphr",
+  "main": "index.js",
+  "version": "0.1.0",
+  "homepage": "https://github.com/Caligone/smphr",
+  "authors": [
+    "Caligone <pierrejean.leger.pro@gmail.com>"
+  ],
+  "description": "A friendly monitoring service",
+  "moduleType": [
+    "node"
+  ],
+  "keywords": [
+    "monitoring",
+    "wepi",
+    "node",
+    "hapi"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/vendors/",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "foundation": "~5.5.2"
+  }
+}

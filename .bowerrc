@@ -1,0 +1,5 @@
+{
+    "directory": "public/vendors/",
+    "analytics": false,
+    "timeout": 120000
+}

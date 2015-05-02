@@ -18,5 +18,32 @@ module.exports = [
                 path: './public/images'
             }
         }
+    },
+    {
+        method: 'GET',
+        path: '/js/{param*}',
+        handler: {
+            directory: {
+                path: './public/js'
+            }
+        }
+    },
+    {
+        method: 'GET',
+        path: '/css/{param*}',
+        handler: {
+            directory: {
+                path: './public/css'
+            }
+        }
+    },
+    {
+        method: 'GET',
+        path: '/fonts/{param*}',
+        handler: {
+            directory: {
+                path: './public/fonts'
+            }
+        }
     }
 ];
