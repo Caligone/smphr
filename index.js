@@ -16,18 +16,22 @@ var Composer = Glue.compose(Manifest, composeOptions, function (err, server) {
 
     server.start(function () {
         console.log('Server is running on ' + server.info.host + ':' + server.info.port);
+
         server.plugins.TargetBrick.TargetModel.find({}, function (err, targets) {
             _.each(targets, function (target) {
                 setInterval(function() {
                     var currentTarget = target;
+                    server.log('Send POST to ' + server.settings.app.get('url'));
                     RequestTool({
                         uri: server.settings.app.get('url') + '/logs/' + target._id,
                         method: 'POST'
                     }, function (err, response) {
+                        server.log(err);
                         server.log(currentTarget.url + " checked !", err);
                     });
                 }, 1000 * 60);
             });
         });
+
     });
 });

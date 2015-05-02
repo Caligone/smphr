@@ -41,6 +41,9 @@ module.exports = [
                     id_target: Joi.string().regex(/^[0-9a-fA-F]{24}$/).required()
                 }
             }
+        },
+        cache: {
+            expiresIn: 1
         }
     }
 ];
