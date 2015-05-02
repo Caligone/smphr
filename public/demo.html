@@ -17,7 +17,7 @@
         var id_target = window.location.pathname.replace('/demo/', '');
 
         // Get the CSV and create the chart
-        $.getJSON('http://localhost:3000/logs/' + id_target, function (json) {
+        $.getJSON('/logs/' + id_target, function (json) {
             var series = [];
             series[0] = {};
             series[0].name = 'Reponse time';
