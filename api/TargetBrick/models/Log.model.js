@@ -2,8 +2,7 @@
 
 /* Dependencies and constants*/
 var uuid = require('node-uuid'),
-    _ = require('underscore'),
-    RequestTool = require('request');
+    _ = require('underscore');
 
 module.exports = function (mongoose) {
     
