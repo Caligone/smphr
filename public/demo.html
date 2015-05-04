@@ -2,16 +2,18 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>smphr</title>
+    <link rel="icon" type="image/png" href="/images/logo.png" />
+    <link rel="icon" type="image/png" href="/images/logo.png" />
+    <title>smphr.io – A friendly monitoring service</title>
 </head>
 <body>
 
 <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
 
-<script src="https://code.jquery.com/jquery-1.9.1.js"></script>
-<script src="http://code.highcharts.com/highcharts.js"></script>
-<script src="http://code.highcharts.com/modules/exporting.js"></script>
-<script src="http://underscorejs.org/underscore-min.js"></script>
+<script src="/js/jquery.min.js"></script>
+<script src="/js/highcharts.js"></script>
+<script src="/js/exporting.js"></script>
+<script src="/js/underscore-min.js"></script>
 <script>
     $(function () {
         var id_target = window.location.pathname.replace('/demo/', '');
@@ -35,7 +37,7 @@
             });
             $('#container').highcharts({
                 title: {
-                    text: 'Data from http://caligone.fr'
+                    text: 'Data from the target ' + id_target
                 },
                 xAxis: {
                     type: 'datetime',
