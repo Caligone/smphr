@@ -671,12 +671,12 @@ small.error {
 /*** Buttons ***/
 
 .button {
-	background: #502e4e;
+	background: #2980b9;
 }
 
 .button:hover, 
 .button:focus {
-	background: #6E4B6C;
+	background: #3498db;
 }
 
 
@@ -781,4 +781,29 @@ small.error {
 	-webkit-transition: font-size 0.2s ease;
     -moz-transition: font-size 0.2s ease;
     transition: font-size 0.2s ease;
+}
+
+.section.alt {
+	background-color: #2980b9;
+	color: white;
+}
+
+.section.alt h2, .section.alt label {
+	color: #fff;
+	border-color: #fff;
+}
+
+.section.alt .button {
+	color: #2980b9;
+	background-color: #fff;
+}
+
+.section.alt .button:hover {
+	color: #fff;
+	background-color: #3498db;
+}
+
+.section.alt input {
+	border: none;
+	color: #2980b9;
 }
